@@ -46,3 +46,22 @@ h1, h2 {
     font-weight: bold;
     cursor: pointer;
 }
+
+.producto-fila {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #1E90FF;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.imagen-pequeña {
+    width: 150px;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.card-body {
+    width: 100%;
+}

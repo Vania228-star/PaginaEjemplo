@@ -19,6 +19,7 @@ function leerDatosProducto(producto) {
         id: producto.querySelector('button').getAttribute('data-id'),
         nombre: producto.querySelector('h5').textContent,
         precio: parseInt(producto.querySelector('button').getAttribute('data-precio')),
+        imagen: producto.querySelector('.imagen-pequeña').src,
         cantidad: 1,
     };
 
@@ -46,9 +47,12 @@ function dibujarCarritoHTML() {
     limpiarHTML();
 
     carrito.forEach(producto => {
-        const { id, nombre, precio, cantidad } = producto;
+        const { id, nombre, precio, cantidad, imagen } = producto;
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td>
+                <img src="${imagen}" width="50" alt="${nombre}">
+            </td>
             <td>${nombre}</td>
             <td>$${precio.toLocaleString('es-CL')}</td>
             <td>${cantidad}</td>
