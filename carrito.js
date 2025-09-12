@@ -4,6 +4,12 @@ const listaProductos = document.querySelector('.row');
 const listaCarrito = document.querySelector('#lista-carrito');
 const totalPagar = document.querySelector('#total-pagar');
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    dibujarCarritoHTML();
+});
+
 listaProductos.addEventListener('click', agregarProducto);
 listaCarrito.addEventListener('click', eliminarProducto);
 
@@ -94,11 +100,6 @@ function eliminarProducto(e) {
         sincronizarStorage();
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    dibujarCarritoHTML();
-});
 
 function sincronizarStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
